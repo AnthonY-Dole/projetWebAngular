@@ -23,4 +23,7 @@ product(ref: string,prix:number){
   }
   this.price =  this.price + prix;
 }
+delete(){
+ this.products.slice();
+}
 }
