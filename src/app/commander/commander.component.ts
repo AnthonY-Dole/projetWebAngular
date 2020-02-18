@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
+import { BoutiqueComponent } from '../boutique/boutique.component';
 
 @Component({
   selector: 'app-commander',
@@ -8,8 +9,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./commander.component.css']
 })
 export class CommanderComponent implements OnInit {
+  @Input()
   form: FormGroup;
-  constructor(public fb: FormBuilder, private http: HttpClient) {
+  constructor(public fb: FormBuilder, private http: HttpClient, private boutique: BoutiqueComponent) {
     this.form = this.fb.group({
       firstname: [''],
       lastname: [''],
@@ -29,6 +31,10 @@ export class CommanderComponent implements OnInit {
     formData.append("address", this.form.get('address').value);
     formData.append("postalcode", this.form.get('postalcode').value);
     formData.append("city", this.form.get('city').value);
+
+    console.log("coucou");
+    console.log(this.boutique.products);
+    
 
     this.http.post('http://dam.tokidev.fr/customers', formData).subscribe(
       (response) => console.log(response),
