@@ -12,13 +12,13 @@
             <nav class="col-md-6 ">
                 <ul class="nav float-right">
                     <li class="nav-item">
-                        <a id="menu_element"  href="index.html">ACCUEIL</a>
+                        <a id="menu_element"  [routerLink]="['/index']" routerLinkActive="router-link-active" >ACCUEIL</a>
                     </li>
                     <li class="nav-item">
-                        <a id="menu_element"  href="boutique.html">BOUTIQUE</a> 
+                        <a id="menu_element" [routerLink]="['/boutique']" routerLinkActive="router-link-active">BOUTIQUE</a> 
                     </li>
                     <li class="nav-item">
-                        <a id="menu_element"  href="contact.html">NOUS CONTACTER</a> 
+                        <a id="menu_element"  [routerLink]="['/contact']" routerLinkActive="router-link-active">NOUS CONTACTER</a> 
                     </li>
                 </ul>
             </nav>
