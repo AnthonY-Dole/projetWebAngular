@@ -51,13 +51,15 @@
                         <a  class="col-md-* float-right" ></a>
                     </div>
             </div>
+            
                 <hr class="col-md-12">
                 <div class="col-md-12"> 
                     <a class="col-md-* "><strong>&#62; Total</strong></a>
-                    <a class="col-md-* float-right"><strong>{{price}}</strong></a>
+                    <a class="col-md-* float-right"><strong>{{total}}</strong></a>
                 </div>
                 <div class="col-md-12">
-                    <button name="boutton" [routerLink]="['/commander']" class="float-right">Commander</button>
+                    <button type="button" class="btn btn-primary" (click)="delete()">Vider mon panier</button>
+                    <button name="boutton" [routerLink]="['/commander']" class="float-right" (click)="add()">Commander</button>
                 </div>
             </div>
         </div>
