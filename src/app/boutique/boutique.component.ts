@@ -18,7 +18,7 @@ export class BoutiqueComponent implements OnInit {
 price:any = 0;
 total:any = 0;
 
-product(ref: any,prix:any){
+product(ref: any,prix:number){
   if (ref && prix) {
     this.products.push(ref,prix);
   }
@@ -32,5 +32,6 @@ delete(){
 }
 add(){
   this.products;
+  console.log(this.products);
 }
 }
