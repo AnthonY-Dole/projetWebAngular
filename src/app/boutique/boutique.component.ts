@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { PhotoService } from '../photo.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { PhotoService } from '../photo.service';
   styleUrls: ['./boutique.component.css']
 })
 export class BoutiqueComponent implements OnInit {
+  @Input()
   albums;
   constructor(private photosService: PhotoService,) { }
 
@@ -14,24 +15,27 @@ export class BoutiqueComponent implements OnInit {
     this.albums = this.photosService.getPhotos();
   }
   
-  products = [];
-price:any = 0;
+  products:any = [];
+price:number = 0;
 total:any = 0;
 
 product(ref: any,prix:number){
   if (ref && prix) {
     this.products.push(ref,prix);
   }
-  this.price = prix;
+  console.log(this.products);
+  this.price = +prix;
   this.total = this.total + this.price
 
   console.log(this.price);
 }
 delete(){
  this.products = [];
+ this.total =0;
 }
 add(){
   this.products;
-  console.log(this.products);
+  this.total;
+  console.log(this.products,this.total);
 }
 }
