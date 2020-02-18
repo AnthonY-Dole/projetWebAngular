@@ -15,7 +15,7 @@ export class BoutiqueComponent implements OnInit {
   }
   
   products = [];
-price:number;
+  price:number;
 
 product(ref: string,prix:number){
   if (ref && prix) {
