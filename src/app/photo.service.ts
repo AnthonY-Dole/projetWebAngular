@@ -14,12 +14,6 @@ export class PhotoService {
     })
   }  
 
-  getEmployees(){
-    return this.http.get(this.apiURL + '/products')
-    .pipe(
-    
-    )
-  }
   getPhotos() {
     return this.http.get('http://dam.tokidev.fr/products');
   }

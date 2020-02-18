@@ -47,6 +47,7 @@
                 <div id = "panier_element" > 
             
                     <div class="col-md-12" *ngFor="let product of products" > 
+
                         <a class="col-md-*"><strong>+</strong>{{product}}</a>
                         <a  class="col-md-* float-right" ></a>
                     </div>
@@ -55,7 +56,7 @@
                 <hr class="col-md-12">
                 <div class="col-md-12"> 
                     <a class="col-md-* "><strong>&#62; Total</strong></a>
-                    <a class="col-md-* float-right"><strong>{{total}}</strong></a>
+                    <a class="col-md-* float-right"><strong>{{total}}€</strong></a>
                 </div>
                 <div class="col-md-12">
                     <button type="button" class="btn btn-primary" (click)="delete()">Vider mon panier</button>

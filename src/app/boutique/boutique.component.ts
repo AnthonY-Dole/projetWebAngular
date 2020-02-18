@@ -7,7 +7,7 @@ import { PhotoService } from '../photo.service';
   styleUrls: ['./boutique.component.css']
 })
 export class BoutiqueComponent implements OnInit {
-  @Input()
+  @Input() products:any = [];
   albums;
   constructor(private photosService: PhotoService,) { }
 
@@ -15,7 +15,7 @@ export class BoutiqueComponent implements OnInit {
     this.albums = this.photosService.getPhotos();
   }
   
-  products:any = [];
+  
 price:number = 0;
 total:any = 0;
 
@@ -38,4 +38,5 @@ add(){
   this.total;
   console.log(this.products,this.total);
 }
+
 }

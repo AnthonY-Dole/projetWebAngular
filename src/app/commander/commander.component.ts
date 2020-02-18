@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
 import { BoutiqueComponent } from '../boutique/boutique.component';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-commander',
@@ -11,7 +12,7 @@ import { BoutiqueComponent } from '../boutique/boutique.component';
 export class CommanderComponent implements OnInit {
   @Input()
   form: FormGroup;
-  constructor(public fb: FormBuilder, private http: HttpClient, private boutique: BoutiqueComponent) {
+  constructor(public fb: FormBuilder, private http: HttpClient, private boutique: BoutiqueComponent,public data: DataService) {
     this.form = this.fb.group({
       firstname: [''],
       lastname: [''],
@@ -22,6 +23,8 @@ export class CommanderComponent implements OnInit {
    }
 
   ngOnInit(): void {
+this.data.get();
+console.log(this.data.get());
   }
 
   submitForm() {
