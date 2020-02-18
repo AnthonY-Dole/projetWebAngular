@@ -8,7 +8,8 @@ import { BoutiqueComponent } from './boutique/boutique.component';
 import { IndexComponent } from './index/index.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommanderComponent } from './commander/commander.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule }   from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
