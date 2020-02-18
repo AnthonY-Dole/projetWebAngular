@@ -9,7 +9,7 @@ import { PhotoService } from '../photo.service';
 export class BoutiqueComponent implements OnInit {
   @Input() products:any = [];
   albums;
-  constructor(private photosService: PhotoService,) { }
+  constructor(private photosService: PhotoService) { }
 
   ngOnInit(): void {
     this.albums = this.photosService.getPhotos();
@@ -18,6 +18,9 @@ export class BoutiqueComponent implements OnInit {
   
 price:number = 0;
 total:any = 0;
+  //products:any = [];
+
+  //total:any = 0;
 
 product(ref: any,prix:number){
   if (ref && prix) {

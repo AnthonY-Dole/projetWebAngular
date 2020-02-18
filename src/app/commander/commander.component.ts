@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
 import { BoutiqueComponent } from '../boutique/boutique.component';
 import { DataService } from '../data.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-commander',
@@ -10,7 +11,6 @@ import { DataService } from '../data.service';
   styleUrls: ['./commander.component.css']
 })
 export class CommanderComponent implements OnInit {
-  @Input()
   form: FormGroup;
   constructor(public fb: FormBuilder, private http: HttpClient, private boutique: BoutiqueComponent,public data: DataService) {
     this.form = this.fb.group({
@@ -25,26 +25,31 @@ export class CommanderComponent implements OnInit {
   ngOnInit(): void {
 this.data.get();
 console.log(this.data.get());
+    console.log(this.boutique.products);
   }
 
   submitForm() {
+    // Sending the client to json.
     var formData: any = new FormData();
+    var temp;
+    var user;
     formData.append("firstname", this.form.get('firstname').value);
     formData.append("lastname", this.form.get('lastname').value);
     formData.append("address", this.form.get('address').value);
     formData.append("postalcode", this.form.get('postalcode').value);
     formData.append("city", this.form.get('city').value);
-
-    console.log("coucou");
-    console.log(this.boutique.products);
-    
-
     this.http.post('http://dam.tokidev.fr/customers', formData).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error),
+      (response) => {
+        console.log(response);
+        temp = response;
+      },
+      (error) => console.log(error)
     );
+
+    // Getting the last element of json.
+    /*return this.http.get('http://dam.tokidev.fr/customer?max=100&offset=100').subscribe(
+      //this.user = data.local
+    );*/
   }
-
-
 
 }
