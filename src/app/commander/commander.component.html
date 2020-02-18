@@ -1,98 +1,63 @@
 <!--
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-											Menu 
+            Menu 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 -->
 <header class="col-md-12">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-6"> 
-				<img src="../../assets/logo.png" class="logoImg" alt="folio" title="folio" /> 
-			</div>
-			<nav class="col-md-6 ">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="../../assets/logo.png" class="logoImg" alt="folio" title="folio" />
+      </div>
+      <nav class="col-md-6 ">
         <ul class="nav float-right">
           <li class="nav-item">
-              <a id="menu_element"  [routerLink]="['/index']" routerLinkActive="router-link-active" >ACCUEIL</a>
+            <a id="menu_element" [routerLink]="['/index']" routerLinkActive="router-link-active">ACCUEIL</a>
           </li>
           <li class="nav-item">
-              <a id="menu_element" [routerLink]="['/boutique']" routerLinkActive="router-link-active">BOUTIQUE</a> 
+            <a id="menu_element" [routerLink]="['/boutique']" routerLinkActive="router-link-active">BOUTIQUE</a>
           </li>
           <li class="nav-item">
-              <a id="menu_element"  [routerLink]="['/contact']" routerLinkActive="router-link-active">NOUS CONTACTER</a> 
+            <a id="menu_element" [routerLink]="['/contact']" routerLinkActive="router-link-active">NOUS CONTACTER</a>
           </li>
-      </ul>
-			</nav>
-		</div>
-	</div>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
 <!--
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-											Formulaire 
+            Formulaire 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 -->
 <div>
-  <div class="container" style="width: 1000px; float: left;">
+  <div id="form" class="container" style="width: 1000px; float: left;">
     <form [formGroup]="form" (ngSubmit)="submitForm()">
-        <div class="form-group input-group-lg">
-            <input class="form-control" placeholder="firstname" formControlName="firstname">
-        </div>
-  
-        <div class="form-group input-group-lg">
-          <input class="form-control" placeholder="lastname" formControlName="lastname">
-        </div>
-  
+      <div class="form-group input-group-lg">
+        <input class="form-control" placeholder="firstname" formControlName="firstname">
+      </div>
+
+      <div class="form-group input-group-lg">
+        <input class="form-control" placeholder="lastname" formControlName="lastname">
+      </div>
+
       <div class="form-group input-group-lg">
         <input class="form-control" placeholder="address" formControlName="address">
       </div>
-  
+
       <div class="form-group input-group-lg">
         <input class="form-control" placeholder="postalcode" formControlName="postalcode">
       </div>
-  
+
       <div class="form-group input-group-lg">
         <input class="form-control" placeholder="city" formControlName="city">
       </div>
-  
-        <div class="form-group">
-            <button class="btn btn-danger btn-block btn-lg">Create</button>
-        </div>
+
+      <div class="form-group">
+        <button class="btn btn-danger btn-block btn-lg">Create</button>
+      </div>
     </form>
   </div>
-  <div>
-    coucou
+  <div id="basket">
   </div>
 </div>
-
-
-<!--<div class="container">
-    <h1>Commander</h1>
-    <form [formGroup]="form" (ngSubmit)="submitForm()">
-      <div class="form-group">
-        <label for="firstname">Prénom</label>
-        <input type="text" class="form-control" placeholder="firstname" required formControlName="firstname">
-      </div>
-
-      <div class="form-group">
-        <label for="lastname">Nom</label>
-        <input type="text" class="form-control" placeholder="lastname" required formControlName="lastname">
-      </div>
-
-      <div class="form-group">
-        <label for="address">Adresse</label>
-        <input type="text" class="form-control" placeholder="address" required formControlName="address">
-      </div>
-
-      <div class="form-group">
-        <label for="postalcode">Code postal</label>
-        <input type="text" class="form-control" placeholder="postalcode" required formControlName="postalcode">
-      </div>
-
-      <div class="form-group">
-        <label for="city">Ville</label>
-        <input type="text" class="form-control" placeholder="city" required formControlName="city">
-      </div>
-
-      <button type="submit" class="btn btn-success">Submit</button>
-
-    </form>
-</div>-->
