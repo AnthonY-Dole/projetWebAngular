@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PhotoService } from '../photo.service';
 
 @Component({
   selector: 'app-boutique',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./boutique.component.css']
 })
 export class BoutiqueComponent implements OnInit {
-
-  constructor() { }
+  albums;
+  constructor(private photosService: PhotoService,) { }
 
   ngOnInit(): void {
+    this.albums = this.photosService.getPhotos();
   }
 
 }
