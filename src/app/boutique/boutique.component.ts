@@ -13,5 +13,14 @@ export class BoutiqueComponent implements OnInit {
   ngOnInit(): void {
     this.albums = this.photosService.getPhotos();
   }
+  
+  products = [];
+price:number;
 
+product(ref: string,prix:number){
+  if (ref && prix) {
+    this.products.push(ref,prix);
+  }
+  this.price =  this.price + prix;
+}
 }
